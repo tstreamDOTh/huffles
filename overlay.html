@@ -1,0 +1,134 @@
+<html>
+<head>
+ <link href="css1/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css1/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="css1/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<style>
+*{margin:0;padding:0;}
+#overlay{ /* we set all of the properties for are overlay */
+    height:60%;
+    width:40%;
+    margin:0 auto;
+    background:white;
+    color:black;
+    padding:10px;
+    position:absolute;
+    top:15%;
+    left:27%;
+    z-index:1000;
+    display:none;
+    /* CSS 3 */
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -o-border-radius:10px;
+    border-radius:10px;
+}
+
+#mask{ /* create are mask */
+    position:fixed;
+    top:0;
+    left:0;
+    background:rgba(0,0,0,0.6);
+    z-index:500;
+    width:100%;
+    height:100%;
+    display:none;
+}
+/* use :target to look for a link to the overlay then we find are mask */
+#overlay:target, #overlay:target + #mask{
+    display:block;
+    opacity:1;
+}
+.close{ /* to make a nice looking pure CSS3 close button */
+    display:block;
+    position:absolute;
+    top:-20px;
+    right:-20px;
+    background:red;
+    color:white;
+    height:40px;
+    width:40px;
+    line-height:40px;
+    font-size:35px;
+    text-decoration:none;
+    text-align:center;
+    font-weight:bold;
+    -webkit-border-radius:40px;
+    -moz-border-radius:40px;
+    -o-border-radius:40px;
+    border-radius:40px;
+}
+#open-overlay{ /* open the overlay */
+    padding:10px 5px;
+   
+    color:white;
+    text-decoration:none;
+    display:inline-block;
+    margin:20px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -o-border-radius:10px;
+    border-radius:10px;
+}
+.nn{
+background-color:orange;
+
+}
+</style>
+</head>
+<body>
+<a href="#overlay" id="open-overlay">Open Overlay</a>
+
+<div id="overlay">
+    <a href="#" class="close">&times;</a>
+	<br>
+   <img src="images/tttt.png" alt="" />
+   <br>
+  
+    <hr>
+	
+	
+	 <h3>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp City : Chennai</h3>
+	 
+	 <h3>&nbsp Locations :  <select>
+                                                <option>ANNANAGAR</option>
+                                                <option>KANCHIPURAM</option>
+                                             <option>ANTIKAPURAM</option>
+                                                <option>MAIN STATION</option>
+                                            </select></h3>
+   <h3>&nbsp&nbsp&nbsp You are looking for </h3>
+   <div class="col-md-12">
+						
+							<ul>
+							<div class="col-md-4 col-sm-4">
+							<div class="col-md-12 col-sm-4 nn">
+								<li><a href="optioondogcat.php?name=dog" ><h3><font color="white"><center>Pet Store</center></font></h3></a></li>
+								</div>
+								</div>
+								<div class="col-md-4 col-sm-4">
+								<div class="col-md-12 col-sm-4 nn">
+              <li><a href="optioondogcat.php?name=cat"><h3><font color="white"><center>Aquarium</center></font></h3></a></li>
+			  </div>
+			  </div>
+			  <div class="col-md-4 col-sm-4">
+			  <div class="col-md-12 col-sm-4 nn">
+              <li ><a href="optioondogcat.php?name=birds"><h3><font color="white"><center>Pet Clinic</center></font></h3></a></li>
+			  </div>
+			 </div>
+			  
+			  
+							</ul>
+						
+					</div>
+</div>
+<div id="mask" onclick="document.location='#';"></div> <!-- the only javascript -->
+</body>
+</html>
